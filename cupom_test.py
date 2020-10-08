@@ -348,25 +348,31 @@ def test_valida_numero_complemento_e_bairro():
 
 def test_exercicio2_customizado():
 
-    # Defina seus próprios valores para as variáveis a seguir
-    nome_loja = ""
-    logradouro = ""
-    numero = 0
-    complemento = ""
-    bairro = ""
-    municipio = ""
-    estado = ""
-    cep = ""
-    telefone = ""
-    observacao = ""
-    cnpj = ""
-    inscricao_estadual = ""
+	# Defina seus próprios valores para as variáveis a seguir
+	nome_loja = "Tropical"
+	logradouro = "Rua siqueira Campos"
+	numero = 580
+	complemento = ""
+	bairro = "Centro"
+	municipio = "Paulista"
+	estado = "Pernambuco"
+	cep = "53401-320"
+	telefone = "(81) 3438-5714"
+	observacao = ""
+	cnpj = "37.886.772/0001-82"
+	inscricao_estadual = "4232303-79"
 
-    endereco_customizado = cupom.Endereco(logradouro, numero, complemento,
-                                 bairro, municipio, estado, cep)
-    loja_customizada = cupom.Loja(nome_loja, endereco_customizado, telefone,
-                                 observacao, cnpj, inscricao_estadual)
+	endereco_customizado = cupom.Endereco(logradouro, numero, complemento,
+								bairro, municipio, estado, cep)
+	loja_customizada = cupom.Loja(nome_loja, endereco_customizado, telefone,
+								observacao, cnpj, inscricao_estadual)
 
-    # E atualize o texto esperado abaixo
-    assert (loja_customizada.dados_loja() == """
-""")
+	# E atualize o texto esperado abaixo
+	assert (loja_customizada.dados_loja() == """Tropical
+Rua siqueira Campos, 580
+Centro - Paulista - Pernambuco
+CEP:53401-320 Tel (81) 3438-5714
+
+CNPJ: 37.886.772/0001-82
+IE: 4232303-79""")
+
